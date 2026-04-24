@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: navette-pro-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true # Génère automatiquement une clé sécurisée
+      - key: FRONTEND_URL
+        value: https://votre-app.vercel.app # À remplacer par votre URL Vercel
